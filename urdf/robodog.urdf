@@ -1,24 +1,30 @@
 <?xml version="1.0"?>
-<robot name="multipleshapes">
-  <link name="base_link">
-    <visual>
-      <geometry>
-        <cylinder length="0.6" radius="0.2"/>
-      </geometry>
-    </visual>
-  </link>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robodog">
 
-  <link name="right_leg">
-    <visual>
-      <geometry>
-        <box size="0.6 0.1 0.2"/>
-      </geometry>
-    </visual>
-  </link>
+<link name="body">
+</link>
 
-  <joint name="base_to_right_leg" type="fixed">
-    <parent link="base_link"/>
-    <child link="right_leg"/>
-  </joint>
+<link name="fr_leg">
+</link>
 
-</robot>
+<link name="fl_leg">
+</link>
+
+<link name="br_leg">
+</link>
+
+<link name="bl_leg">
+</link>
+
+<link name="fr_paw">
+</link>
+
+<link name="fl_paw">
+</link>
+
+<link name="br_paw">
+</link>
+
+<link name="bl_paw">
+</link>
+
