@@ -1,30 +1,53 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robodog">
+<robot name="robodog" xmlns:xacro="http://ros.org/wiki/xacro">
 
-<link name="body">
-</link>
+  <material name="white">
+    <color rgba="1 1 1 1"/>
+  </material>
 
-<link name="fr_leg">
-</link>
+  <link name="body">
+    <visual>
+      <geometry>
+        <box size="0.5 0.2 0.1" />
+      </geometry>
+      <material name="white"/>
+    </visual>
+  </link>
 
-<link name="fl_leg">
-</link>
+  <link name="fr_leg">
+    <visual>
+    <origin xyz="0 0 -0.20" rpy="0 0 0" />
+      <geometry>
+        <box size="0.05 0.05 0.25" />
+      </geometry>
+      <material name="white"/>
+    </visual>
+  </link>
 
-<link name="br_leg">
-</link>
+  <link name="fr_paw">
+    <visual>
+    <origin xyz="0 0 -0.20" rpy="0 0 0" />
+      <geometry>
+        <box size="0.05 0.05 0.25" />
+      </geometry>
+      <material name="white"/>
+    </visual>
+  </link>
 
-<link name="bl_leg">
-</link>
+  <joint name="fr_body_leg" type="revolute">
+    <origin xyz="-0.25 -0.1 0" rpy="0 0 0" />
+    <parent link="body"/>
+    <child link="fr_leg"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1000.0" lower="-0.5" upper="0.5" velocity="0.5"/>
+  </joint>
 
-<link name="fr_paw">
-</link>
+  <joint name="fr_leg_paw" type="revolute">
+    <origin xyz="0 0 -0.2" rpy="0 0 0" /> 
+    <parent link="fr_leg"/>
+    <child link="fr_paw"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1000.0" lower="-0.5" upper="0.5" velocity="0.5"/>
+  </joint>
 
-<link name="fl_paw">
-</link>
-
-<link name="br_paw">
-</link>
-
-<link name="bl_paw">
-</link>
-
+</robot>

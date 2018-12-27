@@ -1,0 +1,11 @@
+digraph G {
+node [shape=box];
+"body" [label="body"];
+"fr_leg" [label="fr_leg"];
+"fr_paw" [label="fr_paw"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"body" -> "fr_body_leg" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"fr_body_leg" -> "fr_leg"
+"fr_leg" -> "fr_leg_paw" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"fr_leg_paw" -> "fr_paw"
+}
